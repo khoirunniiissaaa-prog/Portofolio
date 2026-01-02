@@ -40,12 +40,16 @@
       href="assets/vendor/glightbox/css/glightbox.min.css"
       rel="stylesheet"
     />
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet" />
 
     <style>
-      body {
+      section {
         background: linear-gradient(
           to left top,
           #7c8bda,
@@ -54,9 +58,6 @@
           #e2e0f5,
           #ffffff
         );
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
         font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
 
@@ -203,8 +204,6 @@
           href="index.html"
           class="logo d-flex align-items-center me-auto me-xl-0"
         >
-          <!-- Uncomment the line below if you also wish to use an image logo -->
-          <!-- <img src="assets/img/logo.png" alt=""> -->
           <h1 class="sitename fs-4">Khoirun Nisa</h1>
         </a>
 
@@ -238,76 +237,79 @@
     </header>
 
     <main class="main">
-      <div class="container roadmap-section">
-        <h1
-          class="text-center fw-bold mb-5"
-          style="
-            color: #1e293b;
-            transform: translateY(-100px);
-            margin-top: -120px;
-          "
-        >
-          Learning Roadmap
-        </h1>
+      <section id="hero" class="hero section">
 
-        <div class="main-line d-none d-md-block"></div>
-
-        <div class="node-container flex-column flex-md-row">
-          <div class="node-item">
-            <div class="circle-focus">
-              <small style="font-size: 9px; color: #64748b"
-                >CURRENT FOCUS:</small
-              >
-              <h6 class="m-0 fw-bold">SEMESTER 1</h6>
+        <div class="container roadmap-section">
+          <h1
+            class="text-center fw-bold mb-5"
+            style="
+              color: #1e293b;
+              transform: translateY(-100px);
+              margin-top: -120px;
+            "
+          >
+            Learning Roadmap
+          </h1>
+  
+          <div class="main-line d-none d-md-block"></div>
+  
+          <div class="node-container flex-column flex-md-row">
+            <div class="node-item">
+              <div class="circle-focus">
+                <small style="font-size: 9px; color: #64748b"
+                  >CURRENT FOCUS:</small
+                >
+                <h6 class="m-0 fw-bold">SEMESTER 1</h6>
+              </div>
+              <div class="card-box dark-card card-down" style="top: 85px">
+                <i class="fab fa-python icon-badge text-warning"></i>
+                <strong>Learning:</strong> Python & Data Structures
+              </div>
+              <div class="card-box white-card shadow-sm" style="top: 175px">
+                <i class="fas fa-tasks icon-badge text-primary"></i>
+                Project: Simple To-Do App
+              </div>
             </div>
-            <div class="card-box dark-card card-down" style="top: 85px">
-              <i class="fab fa-python icon-badge text-warning"></i>
-              <strong>Learning:</strong> Python & Data Structures
+  
+            <div class="node-item mt-5 mt-md-0">
+              <div class="semester-label label-down">SEMESTER 1</div>
+              <div class="node-dot"></div>
+              <div class="card-box dark-card card-up">
+                <i class="fab fa-react icon-badge text-info"></i>
+                <strong>Learning:</strong> Web Development (React)
+              </div>
             </div>
-            <div class="card-box white-card shadow-sm" style="top: 175px">
-              <i class="fas fa-tasks icon-badge text-primary"></i>
-              Project: Simple To-Do App
+  
+            <div class="node-item mt-5 mt-md-0">
+              <div class="semester-label label-down">SEMESTER 2</div>
+              <div class="node-dot"></div>
+              <div class="card-box white-card card-down">
+                <i class="fas fa-robot icon-badge text-danger"></i>
+                <strong>Learning:</strong> Development AI
+              </div>
             </div>
-          </div>
-
-          <div class="node-item mt-5 mt-md-0">
-            <div class="semester-label label-down">SEMESTER 1</div>
-            <div class="node-dot"></div>
-            <div class="card-box dark-card card-up">
-              <i class="fab fa-react icon-badge text-info"></i>
-              <strong>Learning:</strong> Web Development (React)
+  
+            <div class="node-item mt-5 mt-md-0">
+              <div class="semester-label label-down">SEMESTER 3</div>
+              <div class="node-dot"></div>
+              <div class="card-box dark-card card-up">
+                <i class="fas fa-cloud icon-badge text-white"></i>
+                <strong>Explore:</strong> Cloud & AI<br />
+                <strong>Interest:</strong> UI/UX Design
+              </div>
             </div>
-          </div>
-
-          <div class="node-item mt-5 mt-md-0">
-            <div class="semester-label label-down">SEMESTER 2</div>
-            <div class="node-dot"></div>
-            <div class="card-box white-card card-down">
-              <i class="fas fa-robot icon-badge text-danger"></i>
-              <strong>Learning:</strong> Development AI
-            </div>
-          </div>
-
-          <div class="node-item mt-5 mt-md-0">
-            <div class="semester-label label-down">SEMESTER 3</div>
-            <div class="node-dot"></div>
-            <div class="card-box dark-card card-up">
-              <i class="fas fa-cloud icon-badge text-white"></i>
-              <strong>Explore:</strong> Cloud & AI<br />
-              <strong>Interest:</strong> UI/UX Design
-            </div>
-          </div>
-
-          <div class="node-item mt-5 mt-md-0">
-            <div class="semester-label label-down">FUTURE GOAL</div>
-            <div class="node-dot"></div>
-            <div class="card-box white-card card-down">
-              <i class="fas fa-graduation-cap icon-badge text-success"></i>
-              Contribute to Open Source & Internship
+  
+            <div class="node-item mt-5 mt-md-0">
+              <div class="semester-label label-down">FUTURE GOAL</div>
+              <div class="node-dot"></div>
+              <div class="card-box white-card card-down">
+                <i class="fas fa-graduation-cap icon-badge text-success"></i>
+                Contribute to Open Source & Internship
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer id="footer" class="footer light-background">
