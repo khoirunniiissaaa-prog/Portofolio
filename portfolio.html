@@ -60,7 +60,7 @@
 
       .roadmap-section {
         position: relative;
-        padding: 0px 0; 
+        padding: 0px 0;
         width: 100%;
       }
 
@@ -138,10 +138,10 @@
 
       .card-up {
         bottom: 50px;
-      } 
+      }
       .card-down {
         top: 50px;
-      } 
+      }
 
       .semester-label {
         position: absolute;
@@ -181,13 +181,169 @@
         top: 100%;
       }
     </style>
+
+    <style>
+      section {
+        background: linear-gradient(
+          to left top,
+          #7c8bda,
+          #a2a6e3,
+          #c3c2ec,
+          #e2e0f5,
+          #ffffff
+        );
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        padding: 100px 0; /* Memberi ruang agar header tidak menutupi konten */
+      }
+
+      .roadmap-section {
+        position: relative;
+        width: 100%;
+      }
+
+      /* Garis putus-putus hanya muncul di Desktop */
+      @media (min-width: 992px) {
+        .main-line {
+          position: absolute;
+          top: 50%;
+          left: 0;
+          right: 0;
+          height: 2px;
+          border-top: 2px dashed #64748b;
+          z-index: 1;
+          transform: translateY(-50%);
+        }
+      }
+      @media (max-width: 768px) {
+        .card-box {
+          position: relative !important;
+          width: 100% !important;
+          max-width: 300px;
+          border-radius: 12px;
+          padding: 14px;
+          font-size: 13px;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+          margin-bottom: 15px;
+          top: 0 !important;
+          bottom: 0 !important;
+        }
+      }
+
+      .node-container {
+        display: flex;
+        flex-direction: column; /* Default Vertikal untuk Mobile/Tablet */
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+      }
+
+      @media (min-width: 992px) {
+        .node-container {
+          flex-direction: row; /* Horizontal hanya di Desktop */
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      .node-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        width: 100%;
+      }
+
+      .circle-focus {
+        width: 120px;
+        height: 120px;
+        background: white;
+        border: 8px solid #415383;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      /* .card-box {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 300px;
+        border-radius: 12px;
+        padding: 14px;
+        font-size: 13px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        margin-bottom: 15px;
+        top: 0 !important;
+        bottom: 0 !important;
+      } */
+
+      .dark-card {
+        background: #415383;
+        color: white;
+        border: none;
+      }
+      .white-card {
+        background: white;
+        color: #415383;
+        border: 1px solid #e2e8f0;
+      }
+
+      .semester-label {
+        font-weight: bold;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: #1e293b;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .node-dot {
+        display: none;
+      }
+
+      @media (min-width: 992px) {
+        .node-dot {
+          display: block;
+          width: 22px;
+          height: 22px;
+          background: #415383;
+          border: 4px solid white;
+          border-radius: 50%;
+        }
+        .card-box {
+          position: absolute !important;
+          width: 200px !important;
+        }
+        .card-up {
+          bottom: 50px;
+        }
+        .card-down {
+          top: 50px;
+        }
+      }
+
+      .icon-badge {
+        float: right;
+        font-size: 18px;
+        margin-left: 8px;
+      }
+
+      h1 {
+        transform: translateY(50px);
+        margin-top: 50px;
+      }
+    </style>
   </head>
 
   <body class="portfolio-page">
     <header
       id="header"
       class="header d-flex align-items-center position-fixed"
-      style="background-color: transparent; width: 100vw;"
+      style="background-color: transparent; width: 100vw"
     >
       <div
         class="container-fluid position-relative d-flex align-items-center justify-content-between"
@@ -196,7 +352,7 @@
           href="index.html"
           class="logo d-flex align-items-center me-auto me-xl-0"
         >
-          <h1 class="sitename fs-4">Khoirun Nisa</h1>
+          <h2 class="sitename fs-4">Khoirun Nisa</h2>
         </a>
 
         <nav id="navmenu" class="navmenu">
@@ -236,15 +392,15 @@
             style="
               color: #1e293b;
               transform: translateY(-50px);
-              margin-top: -50px;"
+              margin-top: -50px;
+            "
           >
             Portofolio & Academic project
           </h1>
-  
-          <div class="main-line d-none d-md-block"></div>
-  
-          <div class="node-container flex-column flex-md-row">
 
+          <div class="main-line d-none d-md-block"></div>
+
+          <div class="node-container flex-column flex-md-row">
             <div class="node-item">
               <div class="circle-focus">
                 <small style="font-size: 9px; color: #64748b"
@@ -253,49 +409,65 @@
                 <h6 class="m-0 fw-bold">SEMESTER 1</h6>
               </div>
               <div class="card-box dark-card card-down" style="top: 85px">
-                <i class="fab fa-python icon-badge" style="color: rgb(255, 213, 0);"></i>
-                <strong>Web Portofolio:</strong> Website profil pribadi menggunakan HTML, CSS & Bootstrap
+                <i
+                  class="fab fa-python icon-badge"
+                  style="color: rgb(255, 213, 0)"
+                ></i>
+                <strong>Web Portofolio:</strong> Website profil pribadi
+                menggunakan HTML, CSS & Bootstrap
               </div>
               <div class="card-box white-card shadow-sm" style="top: 195px">
-                <i class="fas fa-tasks icon-badge" style="color: rgb(87, 87, 219);"></i>
+                <i
+                  class="fas fa-tasks icon-badge"
+                  style="color: rgb(87, 87, 219)"
+                ></i>
                 Website Pariwisata Sleman
               </div>
             </div>
-  
-            <div class="node-item mt-5 mt-md-0">
+
+            <div class="node-item mt-2 mt-md-0">
               <div class="semester-label label-down mt-2">PROJECT</div>
               <div class="node-dot"></div>
               <div class="card-box dark-card card-up">
-                <i class="fab fa-react icon-badge" style="color: rgb(0, 153, 255);"></i>
-                <strong>Cashier App:</strong> Sistem kasir sederhana menggunakan python
+                <i
+                  class="fab fa-react icon-badge"
+                  style="color: rgb(0, 153, 255)"
+                ></i>
+                <strong>Cashier App:</strong> Sistem kasir sederhana menggunakan
+                python
               </div>
             </div>
 
-            <div class="node-item mt-5 mt-md-0">
-              <div class="semester-label label-down">Pengembangan Web Lanjutan</div>
+            <div class="node-item mt-2 mt-md-0">
+              <div class="semester-label label-down">
+                Pengembangan Web Lanjutan
+              </div>
               <div class="node-dot"></div>
               <div class="card-box white-card card-down">
-                <i class="fas fa-robot icon-badge" style="color: red;"></i>
-                <strong>Project:</strong> Website Form 
+                <i class="fas fa-robot icon-badge" style="color: red"></i>
+                <strong>Project:</strong> Website Form
               </div>
             </div>
-  
-            <div class="node-item mt-5 mt-md-0">
+
+            <div class="node-item mt-2 mt-md-0">
               <div class="semester-label label-down mt-2">Mini Project</div>
               <div class="node-dot"></div>
               <div class="card-box dark-card card-up">
-                <i class="fas fa-cloud icon-badge" style="color:white;"></i>
+                <i class="fas fa-cloud icon-badge" style="color: white"></i>
                 <strong>Project:</strong> Mini Web App<br />
                 <strong>Focus:</strong> UI/UX Design
               </div>
             </div>
-  
-            <div class="node-item mt-5 mt-md-0">
+
+            <div class="node-item mt-2 mt-md-0">
               <div class="semester-label label-down">NEXT GOAL</div>
               <div class="node-dot"></div>
               <div class="card-box white-card card-down">
-                <i class="fas fa-graduation-cap icon-badge" style="color: green;"></i>
-                 Project web Dinamis & Internship
+                <i
+                  class="fas fa-graduation-cap icon-badge"
+                  style="color: green"
+                ></i>
+                Project web Dinamis & Internship
               </div>
             </div>
           </div>
@@ -303,37 +475,39 @@
       </section>
     </main>
 
-    <footer id="footer" class="footer" style="background-color: #5A5F9E;">
+    <footer id="footer" class="footer" style="background-color: #5a5f9e">
       <div class="container">
         <div class="copyright text-center">
-          <p style="color: rgb(255, 255, 255);">
+          <p style="color: rgb(255, 255, 255)">
             © <span>2026</span>
             <strong class="px-1 sitename"
-              >Khoirun Nisa Rabiatul Adawiyan</strong>
-              <br />
+              >Khoirun Nisa Rabiatul Adawiyan</strong
+            >
+            <br />
             <span>All Rights Reserved<br /></span>
           </p>
         </div>
 
         <div class="social-links d-flex justify-content-center">
           <a
-          style="border-color: white;"
+            style="border-color: white"
             href="https://wa.me/6285194045101?text=Hallo Khoirun Nisa, saya tertarik untuk berdiskusi mengenai kerja sama"
-            ><i class="bi bi-whatsapp" style="color: white;"></i
-          ></a>
-          <a 
-          style="border-color: white;"
-          href="https://www.instagram.com/nisaao.o/" target="_blank"
-            ><i class="bi bi-instagram" style="color: white;"></i
+            ><i class="bi bi-whatsapp" style="color: white"></i
           ></a>
           <a
-          style="border-color: white;"
+            style="border-color: white"
+            href="https://www.instagram.com/nisaao.o/"
+            target="_blank"
+            ><i class="bi bi-instagram" style="color: white"></i
+          ></a>
+          <a
+            style="border-color: white"
             href="https://www.linkedin.com/in/nisa-nisa-b2377b3a2"
             target="_blank"
-            ><i class="bi bi-linkedin" style="color: white;"></i
+            ><i class="bi bi-linkedin" style="color: white"></i
           ></a>
         </div>
-        <div class="credits" style="color: white;">
+        <div class="credits" style="color: white">
           Designed & Developed by Khoirun Nisa Rabiatul Adawiyan
         </div>
       </div>
@@ -359,15 +533,15 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      window.addEventListener('scroll', ()=>{
-        const val = window.scrollY
-        const head = document.getElementById('header')
-        if (val > 10 ){
-          head.style.backgroundColor = '#C5C4EC'
-        }else{
-           head.style.backgroundColor = 'transparent'
+      window.addEventListener("scroll", () => {
+        const val = window.scrollY;
+        const head = document.getElementById("header");
+        if (val > 10) {
+          head.style.backgroundColor = "#C5C4EC";
+        } else {
+          head.style.backgroundColor = "transparent";
         }
-      })
+      });
     </script>
   </body>
 </html>
